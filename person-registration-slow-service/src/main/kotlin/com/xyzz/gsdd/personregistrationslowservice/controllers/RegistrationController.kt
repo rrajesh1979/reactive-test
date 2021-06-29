@@ -75,7 +75,7 @@ class RegistrationController//            MONGODB_URI = System.getenv("MONGODB_U
             println("Failed ::" + e.message)
         }
 
-        return person.delayElement(Duration.ofMillis(1)) // Mimic blocking nature
+        return person.delayElement(Duration.ofNanos(1)) // Mimic blocking nature
                 .map { it.copy(id = UUID.randomUUID()) }
     }
 
